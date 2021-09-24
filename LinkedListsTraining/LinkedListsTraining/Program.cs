@@ -14,19 +14,18 @@ namespace LinkedListsTraining
             linkedList.AddAtTail(3);
             linkedList.AddAtHead(5);
             linkedList.AddAtTail(7);
-           
-            // 5, 2, 3, 7
-            //linkedList.AddAtIndex(1, 5);
-
             linkedList.displayList();
 
-            linkedList.DeleteAtIndex(1);
+            linkedList.AddAtIndex(1, 10);
             linkedList.displayList();
 
-            /*Console.WriteLine(linkedList.GetNode(0));
-            Console.WriteLine(linkedList.GetNode(1));
-            Console.WriteLine(linkedList.GetNode(3));
-*/
+            linkedList.DeleteAtIndex(3);
+            linkedList.displayList();
+
+            Console.WriteLine(linkedList.Get(0));
+            Console.WriteLine(linkedList.Get(2));
+            Console.WriteLine(linkedList.Get(4));
+
 
         }
     }
