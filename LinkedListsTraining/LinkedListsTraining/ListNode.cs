@@ -30,6 +30,11 @@ namespace LinkedListsTraining
         {
             this.val = val;
             this.next = next;
-        }  
+        }
+
+        public void displayNode()
+        {
+            Console.WriteLine("<" + val + ">");
+        }
     }
 }

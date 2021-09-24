@@ -12,7 +12,7 @@ namespace LinkedListTraining_tests.Helpers
         /*
          * Linked List Builder
          * 
-         * Normally we would utalize our frameworks when using LinkedLists and not write a method like bleow to create a LinkedList.  This list builder, however, is an alternative solution for us to work within the parameters and naming conventions of the problems posted at LeetCode.
+         * Normally we would utilize our frameworks when using LinkedLists and not write a method like below to create a LinkedList.  This list builder, however, is an alternative solution for us to work within the parameters and naming conventions of the problems posted at LeetCode.
          */
         public static ListNode CreateSinglyLinkedList(int[] list) => CreateList(list, out _);
 
