@@ -45,40 +45,55 @@ namespace LinkedListsTraining
         /** Append a node of val to the last element of the linked list. */
         public void AddAtTail(int val)
         {
-            ListNode current = Head;
-            while (current.next != null)
+            if (Head == null)
             {
-                current = current.next;
+                AddAtHead(val);
+            }
+            else
+            {
+                ListNode newNode = new ListNode();
+                newNode.val = val;
+
+                ListNode current = Head;
+
+                while (current.next != null)
+                {
+                    current = current.next;
+                }
+
+                current.next = newNode;
+                size++;
             }
 
-            ListNode newNode = new ListNode();
-            newNode.val = val;
-            current.next = newNode;
-
-            size++;
         }
 
         /** Add a node of val val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
         public void AddAtIndex(int index, int val)
         {
-            if (index >= size || index < 0)
+            if (index > size || index < 0)
             {
-                Console.WriteLine("Provided index is out of range for this list.");
+                Console.WriteLine($"Index({index}) is out of range for this list.");
             }
-            else
+            else if (index == 0)
+            {
+                AddAtHead(val);
+            }
+            else 
             {
                 ListNode current = Head;
 
-                for (int i = 1; i < index; i++)
+                ListNode newNode = new ListNode();
+                newNode.val = val;
+
+                for (int i = 0; i < index-1; i++)
                 {
                     current = current.next;
                 }
+
                 ListNode temp = current.next;
-                ListNode newNode = new ListNode();
-                newNode.val = val;
+                
                 current.next = newNode;
                 newNode.next = temp;
-
                 size++;
             }
         }
@@ -86,22 +101,25 @@ namespace LinkedListsTraining
         /** Delete the index-th node in the linked list, if the index is valid. */
         public void DeleteAtIndex(int index)
         {
-            // throw new NotImplementedException();
             if (index >= size || index < 0)
             {
-                Console.WriteLine("Provided index is out of range for this list.");
+                Console.WriteLine($"Index({index}) is out of range for this list.");
+            }
+            else if (index == 0)
+            {
+                Head = Head.next;
+                size--;
             }
             else
             {
                 ListNode current = Head;
 
-                for (int i = 1; i < index; i++)
+                for (int i = 0; i < index-1; i++)
                 {
                     current = current.next;
                 }
 
                 current.next = current.next.next;
-
                 size--;
             }
         }

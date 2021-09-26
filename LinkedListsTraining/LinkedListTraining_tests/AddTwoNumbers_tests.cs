@@ -8,6 +8,19 @@ namespace LinkedListTraining_tests
     public class AddTwoNumbers_tests
     {
         [TestMethod]
+        public void AddTwoNumbers_SecondEmptyList_ReturnsAddedNumbers()
+        {
+            //Arrange
+            var input_l1 = LinkedListBuilder.CreateSinglyLinkedList(new int[] { });
+            var input_l2 = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 3 });
+            var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 3 });
+            var sut = new Solution();
+            //Act
+            var actual = sut.AddTwoNumbers(input_l1, input_l2);
+            //Assert
+            AssertLinkedLists.NodesHaveEqualValue(expected, actual);
+        }
+        [TestMethod]
         public void AddTwoNumbers_SingleDigits_ReturnsAddedNumbers()
         {
             //Arrange

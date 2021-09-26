@@ -13,6 +13,18 @@ namespace LinkedListTraining_tests
     public class ReverseLinkedLists_tests
     {
         [TestMethod]
+        public void ReverseList_EmptyItem_ReturnsReverseLists()
+        {
+            //Arrange
+            var input = LinkedListBuilder.CreateSinglyLinkedList(new int[] {});
+            var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] {});
+            var sut = new Solution();
+            //Act
+            var actual = sut.ReverseList(input);
+            //Assert
+            AssertLinkedLists.NodesHaveEqualValue(expected, actual);
+        }
+        [TestMethod]
         public void ReverseList_FiveItesm_ReturnsReverseLists()
         {
             //Arrange
