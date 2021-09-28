@@ -21,19 +21,14 @@ namespace LinkedListsTraining
             {
                 Console.WriteLine(linkedList.Get(i));
             }*/
-            //Console.WriteLine(linkedList.Get(0));
-            //linkedList.AddAtIndex(0, 11);
+            
             linkedList.AddAtHead(3);
             linkedList.AddAtTail(4);
             linkedList.AddAtHead(2);
             linkedList.AddAtTail(5);
             linkedList.AddAtIndex(0, 1);
             linkedList.displayList();
-
-            //reverseList.ReverseList(linkedList.Head);
-            
-
-                        
+        
 
             linkedList.AddAtIndex(1, 10);
             linkedList.displayList();

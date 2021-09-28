@@ -24,12 +24,26 @@ namespace LinkedListTraining_tests
             //Assert
             AssertLinkedLists.NodesHaveEqualValue(expected, actual);
         }
+
         [TestMethod]
-        public void ReverseList_FiveItesm_ReturnsReverseLists()
+        public void ReverseList_SingleItem_ReturnsReverseLists()
         {
             //Arrange
-            var input = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 1, 2, 3, 4, 5 });
-            var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 5, 4, 3, 2, 1 });
+            var input = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 1 });
+            var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 1 });
+            var sut = new Solution();
+            //Act
+            var actual = sut.ReverseList(input);
+            //Assert
+            AssertLinkedLists.NodesHaveEqualValue(expected, actual);
+        }
+
+        [TestMethod]
+        public void ReverseList_MultiItems_ReturnsReverseLists()
+        {
+            //Arrange
+            var input = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+            var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] {10, 9, 8, 7, 6, 5, 4, 3, 2, 1 });
             var sut = new Solution();
             //Act
             var actual = sut.ReverseList(input);

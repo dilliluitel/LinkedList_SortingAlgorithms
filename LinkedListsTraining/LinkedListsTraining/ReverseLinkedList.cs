@@ -28,5 +28,22 @@ namespace LinkedListsTraining.ReverseLinkedList
                 return reverseList.Head;
             }
         }
+
+        //Couldn't get it working recursively
+        /*public ListNode ReverseList(ListNode head)
+        {
+           ListNode current = head;
+           if (head == null || head.next == null) return head;
+            else
+            {
+
+               ListNode temp = current;
+
+               current = current.next;
+               current.next = temp;
+
+               return ReverseList(current);
+            }
+        }*/
     }
 }
